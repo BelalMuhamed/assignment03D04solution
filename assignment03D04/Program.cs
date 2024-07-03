@@ -11,7 +11,7 @@ namespace assignment03D04
             x = y;
             y=temp;
         }
-        public static int Sumarray(int[] arr)
+        public static int Sumarray(ref int[] arr)
         {
             int sum = 0;
             if (arr != null)
@@ -99,11 +99,17 @@ namespace assignment03D04
             //Console.WriteLine($"number2 : {number2}");
 
             #endregion
-            //value type parameters 
+            //reference type parameters 
             //passing by  value 
             #region v07
             //int[] arr = { 1, 2, 3, 4, 5, };
             //Console.WriteLine(Sumarray(arr));
+            #endregion
+            //reference type parameters 
+            //passing by reference 
+            #region v07p02
+            //int[] arr = { 1, 2, 3, 4, 5, };
+            //Console.WriteLine(Sumarray(ref arr));
             #endregion
 
         }
