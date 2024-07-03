@@ -2,6 +2,13 @@
 {
     internal class Program
     {
+        //passing by value (value type)
+        static void swap(int x, int y) 
+        {
+            int temp = x;
+            x = y;
+            y=temp;
+        }
         static void Main(string[] args)
         {
             //array two dimensional 
@@ -49,7 +56,19 @@
             }
 
             // Calculate the total number of elements
-            
+
+            #endregion
+            //value type parameters 
+            //passing by value 
+            #region v06
+            Console.Clear() ;
+                int number1=5,number2=3;
+            Console.WriteLine($"number1 : {number1}");
+            Console.WriteLine($"number2 : {number2}");
+            Console.WriteLine("after swaping passing by value ");
+            Console.WriteLine($"number1 : {number1}");
+            Console.WriteLine($"number2 : {number2}");
+
             #endregion
         }
     }
