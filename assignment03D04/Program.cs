@@ -4,13 +4,15 @@ namespace assignment03D04
 {
     internal class Program
     {
-        //passing by value (value type)
+        //passing by value,reference (value type)
         static void swap(ref int x, ref int y) 
         {
             int temp = x;
             x = y;
             y=temp;
         }
+        //passing by value,reference (reference  type)
+        
         public static int Sumarray(ref int[] arr)
         {
             int sum = 0;
@@ -23,6 +25,12 @@ namespace assignment03D04
                 }
             }
             return sum;
+        }
+        //faild passing by value (reference type)
+        static int arrr(int[] arr)
+        {
+            arr= new int[3] {5,6,8};
+            return arr[0];
         }
         static void Main(string[] args)
         {
@@ -110,6 +118,13 @@ namespace assignment03D04
             #region v07p02
             //int[] arr = { 1, 2, 3, 4, 5, };
             //Console.WriteLine(Sumarray(ref arr));
+            #endregion
+            //reference type 
+            //falid passing by value 
+            #region v08
+            int[]arry = {8,9,7};
+            arrr(arry);
+            Console.WriteLine(arry[0]);
             #endregion
 
         }
