@@ -1,4 +1,6 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.Design;
+using System.Data;
 using System.Text;
 
 namespace assignment03D04
@@ -150,6 +152,36 @@ namespace assignment03D04
             }
             return sum;
         }
+        #endregion  
+
+        #region Q11
+        /*11-	 Write a program in C# Sharp to count the frequency of each element of an array*/
+        static void frequency(int[]arr)
+        {
+            int counter = 0;
+            
+            for(int i =0; i < arr.Length;i++)
+            {
+                for(int j=0;j<arr.Length;j++)
+                {
+                    if (arr[i] == arr[j] && j<i)
+                    {
+                        break;
+                        
+                    }
+                    else if (arr[i] == arr[j] && j>=i)
+                    {
+                        counter++;
+                    }
+                   
+                }
+                if (counter > 0)
+                {
+                    Console.WriteLine($"{arr[i]} is repeated  {counter}");
+                    counter = 0;
+                }
+            }
+        }
         #endregion
         static void Main(string[] args)
         {
@@ -269,6 +301,13 @@ namespace assignment03D04
             int[] arr = { 1, 5, 6, 8, 9 };
             Console.WriteLine(sumOfArray(arr));
             #endregion
+           
+            #region Q11test
+            int[] arrafreq = { 4, 3, 2, 1, 8, 9, 7, 5, 2, 1, 6, 7, 8, 7, 2, 5 };
+            Console.WriteLine(arr.Length);
+            frequency(arrafreq);
+            #endregion
+
         }
     }
 }
