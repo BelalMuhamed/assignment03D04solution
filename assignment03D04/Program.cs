@@ -341,6 +341,47 @@ namespace assignment03D04
 
 
             #endregion
-        }
+
+            #region Q14
+            /*14-	 Consider an Array of Integer values with size N, having values as    
+ in this Example
+*/
+            Console.Write("Enter the size of the array: ");
+                int size = int.Parse(Console.ReadLine());
+
+                int[] array = new int[size];
+
+                Console.WriteLine("Enter the elements of the array:");
+                for (int i = 0; i < size; i++)
+                {
+                    array[i] = int.Parse(Console.ReadLine());
+                }
+
+                int maxDistance = 0;
+
+                for (int i = 0; i < size; i++)
+                {
+                    for (int j = size - 1; j > i; j--)
+                    {
+                        if (array[i] == array[j])
+                        {
+                            int distance = j - i;
+                            if (distance > maxDistance)
+                            {
+                                maxDistance = distance;
+                            }
+                            break; 
+                        }
+                    }
+                }
+
+                Console.WriteLine($"The longest distance between two equal cells is: {maxDistance}");
+            
+        
+
+        #endregion
+
+
     }
+}
 }
