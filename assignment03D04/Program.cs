@@ -66,6 +66,16 @@
                 return false;
 
         }
+        //maxmin values in array 
+        #region Q06
+        /*6-Create a function named MinMaxArray, to return the minimum and maximum values stored in an array, using reference parameters */
+        static void maxmin(ref int[]arr,out int max,out int min)
+        {
+            Array.Sort(arr);
+            min = arr[0];
+            max = arr[arr.Length - 1];
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q01
@@ -143,6 +153,19 @@
             int.TryParse(Console.ReadLine(), out numbeer);
             Console.WriteLine(IsPrime(numbeer));
             #endregion
+
+            #region Q06test
+            Console.WriteLine("********************************************************");
+            int[] array1 = { 5, 8, 9, 7, 6, 3, 2, 1 };
+            int MaxValue;
+            int MinValue;
+            maxmin(ref array1,out  MaxValue,out MinValue);
+            Console.WriteLine($"Max value of the array is {MaxValue}");
+            Console.WriteLine($"Min value of the array is {MinValue}");
+
+            #endregion
+
+
         }
     }
 }
