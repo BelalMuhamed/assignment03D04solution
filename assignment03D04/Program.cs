@@ -35,7 +35,20 @@
             subtract = num1 - num2;
         }
         #endregion
+        // Function to calculate the sum of the individual digits of a given number
+        #region Q04
+        static int SumOfDigits(int number)
+        {
+            int sum = 0;
+            while (number != 0)
+            {
+                sum += number % 10; 
+                number /= 10;       
+            }
+            return sum;
+        }
 
+        #endregion
         static void Main(string[] args)
         {
             #region Q01
@@ -98,6 +111,13 @@
 
             #endregion
 
+            #region Q04test
+            Console.Clear();
+            int number;
+            Console.WriteLine("Enter number you want to calculate sum of it's digits ");
+            int.TryParse(Console.ReadLine(), out number);
+            Console.WriteLine(SumOfDigits(number)); 
+            #endregion
         }
     }
 }
