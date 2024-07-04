@@ -16,6 +16,16 @@
             num1 = num2;
             num2 = temp;
         }
+        //reference type passing by value 
+        static void  PassByValue(int[] arr)
+        {
+            arr = new int[]{ 5, 7, 8 };
+        }
+        //reference type passing by reference 
+        static void PassByReference(ref int[] arr)
+        {
+            arr = new int[] { 5, 7, 8 };
+        }
         static void Main(string[] args)
         {
             #region Q01
@@ -43,6 +53,30 @@
             swapp(ref number1,ref  number2);
             Console.WriteLine($"number1 after swapping :{number1}");
             Console.WriteLine($"number2 after  swapping :{number2}");
+            #endregion
+
+            #region Q02
+            /*2-Explain the difference between passing (Reference type parameters)
+             * by value and by reference then write a suitable c# example.*/
+            /*answer:
+             *******************passing by value :When a reference type parameter is passed by value, 
+             *the method receives a copy of the reference to the object. The reference itself is copied, 
+             *not the object. This means that while the method can modify the object's data 
+             *(since both the original reference and the copied reference point to the same object), 
+             *it cannot change the original reference to point to a new object.
+             ********************passing by reference :When a reference type parameter is passed by reference, 
+             *the method receives a reference to the reference.This allows the method to modify the object's data
+             *and also change the reference to point to a new object.
+             */
+            int[] arra = { 1, 2, 3 };
+            Console.WriteLine("**************************************************************");
+            //passing by value 
+            PassByValue(arra);
+            Console.WriteLine($"the first element of the array will not be change {arra[0]}");
+            Console.WriteLine("**************************************************************");
+            //passing by value 
+            PassByReference(ref arra);
+            Console.WriteLine($"the first element of the array will  change {arra[0]}");
             #endregion
         }
     }
