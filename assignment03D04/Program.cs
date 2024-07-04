@@ -115,6 +115,31 @@ namespace assignment03D04
             }
         }
         #endregion
+        /*Write a program that prints an identity matrix using for loop
+         *in other words takes a value n from the user and shows the identity table of size n * n.*/
+        #region Q09
+        static void readandprintarray(ref int[,] arr, int numberofrows, int numberofcolumns)
+        {
+            for (int i = 0; i < numberofrows; i++)
+            {
+                for (int j = 0; j < numberofcolumns; j++)
+                {
+                    Console.WriteLine("enter ");
+                    int.TryParse(Console.ReadLine(), out arr[i, j]);
+                }
+            }
+            Console.Clear();
+            for (int i = 0; i < numberofrows; i++)
+            {
+                for (int j = 0; j < numberofcolumns; j++)
+                {
+                    Console.Write($"{arr[i, j]}  ");
+                }
+                Console.WriteLine();
+            }
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             #region Q01
@@ -221,6 +246,12 @@ namespace assignment03D04
             Console.WriteLine(ChangeChar(str, post, ch));
             #endregion
 
+            #region Q09test
+            int rows = 3;
+            int columns = 5;
+            int[,] arr = new int[rows, columns];
+            readandprintarray(ref  arr, rows, columns);
+            #endregion
         }
     }
 }
