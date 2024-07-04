@@ -307,7 +307,28 @@ namespace assignment03D04
             Console.WriteLine(arr.Length);
             frequency(arrafreq);
             #endregion
-
+            
+            #region Q12
+            /*12-Write a program in C# Sharp to find maximum and minimum element in an array*/
+            Console.Clear();
+            int[] arraQ12 = { 4, 3, 2, 5, 8, 9, 10,1 };
+            int maxvalu = arraQ12[0];
+            int samll = arraQ12[0];
+            for(int i= 1;i<arraQ12.Length;i++)
+            {
+                if (MaxValue < arraQ12[i])
+                {
+                    maxvalu = arraQ12[i];
+                }
+                if (samll > arraQ12[i])
+                {
+                    samll = arraQ12[i];
+                }
+            }
+            
+            Console.WriteLine(maxvalu);
+            Console.WriteLine(samll);
+            #endregion
         }
     }
 }
