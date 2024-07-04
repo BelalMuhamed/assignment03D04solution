@@ -1,4 +1,6 @@
-﻿namespace assignment03D04
+﻿using System.Text;
+
+namespace assignment03D04
 {
     internal class Program
     {
@@ -76,6 +78,43 @@
             max = arr[arr.Length - 1];
         }
         #endregion
+        //factorial
+        #region Q07
+        /*7-Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter*/
+        static long factorial(int num)
+        {
+            long fact = 1;
+
+            if (num > 0)
+            {
+                for (int i = num; i > 0; i--)
+                    fact *= i;
+                return fact;
+
+            }
+            else
+                return 0;
+        }
+        #endregion
+
+        #region Q08
+        /*8-	Create a function named "ChangeChar" to modify a letter in a certain position 
+         * (0 based) of a string, replacing it with a different letter*/
+       static string ChangeChar(string str ,int position,char NewChar)
+        {
+            if(position<0 || position>=str.Length)
+            {
+                throw new ArgumentOutOfRangeException(nameof(position), "Position is out of range.");
+            }
+            else
+            {
+                char[] newstring = str.ToCharArray();
+                newstring[position]= NewChar;
+                return new string(newstring);
+
+            }
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q01
@@ -87,7 +126,7 @@
             *****in passing by reference he method receives a reference to the argument. 
             *Changes made to the parameter inside the method will affect the original argument.
              */
-            int number1 = 5, number2 = 3;
+        int number1 = 5, number2 = 3;
             //passing by value 
             Console.WriteLine("passing by value");
             Console.WriteLine($"number1 before swapping :{number1}");
@@ -165,6 +204,22 @@
 
             #endregion
 
+            #region Q07test 
+            Console.Clear();
+            Console.WriteLine("enter your number ");
+            int.TryParse(Console.ReadLine(), out int NumberFact);
+            long result = factorial(NumberFact);
+            Console.WriteLine($"the factorial of {NumberFact} is : {result} ");
+            #endregion
+
+            #region Q08test
+
+            string str = "Belal";
+            int post = 1;
+            char ch = 'i';
+            
+            Console.WriteLine(ChangeChar(str, post, ch));
+            #endregion
 
         }
     }
