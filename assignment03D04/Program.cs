@@ -49,6 +49,23 @@
         }
 
         #endregion
+        //is prime function 
+        static bool IsPrime(int number)
+        {
+            int counter = 0;
+            for(int i = 1; i <= number; i++)
+            {
+                if(number%i==0)
+                {
+                    counter ++;
+                }
+            }
+            if(counter == 2)
+                return true;
+            else 
+                return false;
+
+        }
         static void Main(string[] args)
         {
             #region Q01
@@ -116,7 +133,15 @@
             int number;
             Console.WriteLine("Enter number you want to calculate sum of it's digits ");
             int.TryParse(Console.ReadLine(), out number);
-            Console.WriteLine(SumOfDigits(number)); 
+            Console.WriteLine(SumOfDigits(number));
+            #endregion
+
+            #region Q05test
+            Console.Clear();
+            int numbeer;
+            Console.WriteLine("Enter number : ");
+            int.TryParse(Console.ReadLine(), out numbeer);
+            Console.WriteLine(IsPrime(numbeer));
             #endregion
         }
     }
