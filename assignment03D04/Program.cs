@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 
 namespace assignment03D04
 {
@@ -115,9 +116,10 @@ namespace assignment03D04
             }
         }
         #endregion
+
+        #region Q09
         /*Write a program that prints an identity matrix using for loop
          *in other words takes a value n from the user and shows the identity table of size n * n.*/
-        #region Q09
         static void printarray( int number)
         {
             if (number > 0)
@@ -135,9 +137,20 @@ namespace assignment03D04
                 }
             }
         }
-        
         #endregion
 
+        #region Q10
+        /*10-Write a program in C# Sharp to find the sum of all elements of the array.*/
+        static int sumOfArray (int[] array)
+        {
+            int sum = 0;
+            for(int i =0;i < array.Length;i++)
+            {
+                sum += array[i];
+            }
+            return sum;
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q01
@@ -149,20 +162,20 @@ namespace assignment03D04
             *****in passing by reference he method receives a reference to the argument. 
             *Changes made to the parameter inside the method will affect the original argument.
              */
-        int number1 = 5, number2 = 3;
+            int number1 = 5, number2 = 3;
             //passing by value 
             Console.WriteLine("passing by value");
             Console.WriteLine($"number1 before swapping :{number1}");
             Console.WriteLine($"number2 before swapping :{number2}");
-            swap(number1,number2);
+            swap(number1, number2);
             Console.WriteLine($"number1 after swapping :{number1}");
             Console.WriteLine($"number2 after  swapping :{number2}");
-            Console.WriteLine( "****************************************************");
+            Console.WriteLine("****************************************************");
             //passing by reference 
             Console.WriteLine("passing by reference");
             Console.WriteLine($"number1 before swapping :{number1}");
             Console.WriteLine($"number2 before swapping :{number2}");
-            swapp(ref number1,ref  number2);
+            swapp(ref number1, ref number2);
             Console.WriteLine($"number1 after swapping :{number1}");
             Console.WriteLine($"number2 after  swapping :{number2}");
             #endregion
@@ -194,7 +207,7 @@ namespace assignment03D04
             #region Q03Test
             Console.Clear();
             int num1 = 10, num2 = 7, sum, subtract;
-            SumSubtract(num1,num2 ,out sum,out subtract);
+            SumSubtract(num1, num2, out sum, out subtract);
             Console.WriteLine($"the sum of {num1}and {num2} is : {sum}");
             Console.WriteLine($"the subtract of {num1}and {num2} is : {subtract}");
 
@@ -221,7 +234,7 @@ namespace assignment03D04
             int[] array1 = { 5, 8, 9, 7, 6, 3, 2, 1 };
             int MaxValue;
             int MinValue;
-            maxmin(ref array1,out  MaxValue,out MinValue);
+            maxmin(ref array1, out MaxValue, out MinValue);
             Console.WriteLine($"Max value of the array is {MaxValue}");
             Console.WriteLine($"Min value of the array is {MinValue}");
 
@@ -240,7 +253,7 @@ namespace assignment03D04
             string str = "Belal";
             int post = 1;
             char ch = 'i';
-            
+
             Console.WriteLine(ChangeChar(str, post, ch));
             #endregion
 
@@ -249,6 +262,12 @@ namespace assignment03D04
             Console.WriteLine("enter number ");
             int.TryParse(Console.ReadLine(), out int num);
             printarray(num);
+            #endregion
+
+            #region Q10test
+            Console.Clear();
+            int[] arr = { 1, 5, 6, 8, 9 };
+            Console.WriteLine(sumOfArray(arr));
             #endregion
         }
     }
