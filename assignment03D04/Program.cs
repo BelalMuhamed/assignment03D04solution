@@ -26,6 +26,16 @@
         {
             arr = new int[] { 5, 7, 8 };
         }
+        //q03 function pass by out 
+        #region Q03
+        /*3-Write a c# Function that accept 4 parameters from user and return result of summation and subtracting of two numbers*/
+        static void SumSubtract(int num1,int num2,out int sum,out int subtract)
+        {
+            sum = num1 + num2;
+            subtract = num1 - num2;
+        }
+        #endregion
+
         static void Main(string[] args)
         {
             #region Q01
@@ -78,6 +88,16 @@
             PassByReference(ref arra);
             Console.WriteLine($"the first element of the array will  change {arra[0]}");
             #endregion
+
+            #region Q03Test
+            Console.Clear();
+            int num1 = 10, num2 = 7, sum, subtract;
+            SumSubtract(num1,num2 ,out sum,out subtract);
+            Console.WriteLine($"the sum of {num1}and {num2} is : {sum}");
+            Console.WriteLine($"the subtract of {num1}and {num2} is : {subtract}");
+
+            #endregion
+
         }
     }
 }
