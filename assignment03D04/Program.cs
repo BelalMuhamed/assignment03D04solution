@@ -329,6 +329,18 @@ namespace assignment03D04
             Console.WriteLine(maxvalu);
             Console.WriteLine(samll);
             #endregion
+
+            #region Q13
+            /*Write a program in C# Sharp to find the second largest element in an array.*/
+            int[] arrQ13 = { 5, 8, 9, 7, 10, 20, 89, 65, 23 };
+            int[] cpy=new int[arrQ13.Length];
+            Array.Copy(arrQ13, cpy, arrQ13.Length);
+            Array.Sort(cpy);
+            int SecondLargest = cpy[cpy.Length-2];
+            Console.WriteLine(SecondLargest);
+
+
+            #endregion
         }
     }
 }
