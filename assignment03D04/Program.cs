@@ -376,12 +376,22 @@ namespace assignment03D04
                 }
 
                 Console.WriteLine($"The longest distance between two equal cells is: {maxDistance}");
-            
-        
-
-        #endregion
 
 
-    }
+
+            #endregion
+
+
+            #region Q16
+            string phrase = "The quick brown fox jumps over the lazy dog.";
+            string[] words = phrase.Split(' ');
+
+           for(int i=words.Length-1;i>=0;i--)
+            {
+                Console.Write($"{words[i]} ");
+            }
+            #endregion
+
+        }
 }
 }
