@@ -392,6 +392,56 @@ namespace assignment03D04
             }
             #endregion
 
+            #region Q17
+            /*17-	 Write a program to create two multidimensional arrays of same size. Accept value from user and store them in first array
+             * . Now copy all the elements of first array on second array and print second array.*/
+            Console.Clear();
+            Console.Write("Enter the number of rows: ");
+            int rows = int.Parse(Console.ReadLine());
+            Console.Write("Enter the number of columns: ");
+            int cols = int.Parse(Console.ReadLine());
+
+            int[,] firstArray = new int[rows, cols];
+            int[,] secondArray = new int[rows, cols];
+
+            Console.WriteLine("Enter the elements of the first array:");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    Console.Write($"Element [{i},{j}]: ");
+                    firstArray[i, j] = int.Parse(Console.ReadLine());
+                }
+            }
+
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    secondArray[i, j] = firstArray[i, j];
+                }
+            }
+
+            Console.WriteLine("The elements of the second array are:");
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    Console.Write(secondArray[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            #endregion
+
+            #region Q18
+            /*18-	Write a Program to Print One Dimensional Array in Reverse Order*/
+            int[] unreversedarray = { 8, 5, 9, 1, 3, 2, 7, 8, 9, 10, 2, 3, 8, 7 };
+            Console.WriteLine("reversed array :");
+            for (int i = unreversedarray.Length-1;i>0;i--)
+            {
+                Console.Write($"{unreversedarray[i]}  ");
+            }
+            #endregion
         }
-}
+    }
 }
